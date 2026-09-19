@@ -1,0 +1,11 @@
+node_modules/
+*.tgz
+coverage/
+.DS_Store
+SPEC.md
+.pi/issues.md
+.pi/issues.md.lock
+.pi/.issues.md.*.tmp
+.pi/issues.local.json
+.pi/issues.local.json.lock
+.pi/.issues.local.json.*.tmp

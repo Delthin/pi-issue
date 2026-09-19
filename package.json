@@ -1,0 +1,41 @@
+{
+  "name": "pi-issue",
+  "version": "0.1.0",
+  "description": "A project-local Markdown issue inbox for Pi: capture ideas now, handle them later.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Delthin/pi-issue.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Delthin/pi-issue/issues"
+  },
+  "homepage": "https://github.com/Delthin/pi-issue#readme",
+  "keywords": ["pi-package", "pi-extension", "issues", "backlog", "markdown"],
+  "files": ["index.ts", "README.md", "LICENSE", "CHANGELOG.md"],
+  "pi": { "extensions": ["./index.ts"] },
+  "engines": { "node": ">=22.19.0" },
+  "publishConfig": { "access": "public", "registry": "https://registry.npmjs.org/" },
+  "scripts": {
+    "test": "tsx --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "smoke": "node scripts/smoke.mjs && node scripts/session-smoke.mjs",
+    "check": "npm run typecheck && npm test && npm run smoke",
+    "prepack": "npm run check",
+    "prepublishOnly": "npm run check"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*",
+    "typebox": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-ai": "0.85.1",
+    "@earendil-works/pi-coding-agent": "0.85.1",
+    "@types/node": "^22.19.0",
+    "tsx": "^4.20.0",
+    "typebox": "1.3.7",
+    "typescript": "^5.9.3"
+  }
+}
